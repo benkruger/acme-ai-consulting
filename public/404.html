@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Acme AI Consulting</title>
+  <script>
+    // SPA redirect trick: capture the requested path and forward to index.html.
+    // App.svelte reads sessionStorage.spa_redirect_path and restores the URL.
+    (function () {
+      var path = window.location.pathname + window.location.search + window.location.hash
+      sessionStorage.setItem('spa_redirect_path', path)
+      window.location.replace('/')
+    })()
+  </script>
+</head>
+<body></body>
+</html>
