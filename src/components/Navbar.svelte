@@ -1,5 +1,7 @@
 <script>
-  let { onNavigate } = $props()
+  import Dial from './Dial.svelte'
+
+  let { onNavigate, scrollProgress = 0 } = $props()
 
   function go(event, target) {
     event.preventDefault()
@@ -7,9 +9,13 @@
   }
 
   const sections = [
-    { id: 'problem', label: 'The Problem' },
+    { id: 'problem', label: 'Problem' },
     { id: 'approach', label: 'Approach' },
+    { id: 'tenants', label: 'Tenants' },
     { id: 'flow', label: 'Flow' },
+    { id: 'how-we-work', label: 'Work' },
+    { id: 'resources', label: 'Resources' },
+    { id: 'testimonials', label: 'Clients' },
     { id: 'contact', label: 'Book' }
   ]
 
@@ -28,12 +34,20 @@
       <span class="brand-mark" aria-hidden="true">●</span>
       <span class="brand-name">Acme AI Consulting</span>
     </a>
+
     <div class="links" aria-label="Section navigation">
       {#each sections as section (section.id)}
         <a class="link" href="#{section.id}" onclick={(e) => handleAnchor(e, section.id)}>
           {section.label}
         </a>
       {/each}
+    </div>
+
+    <div class="progress" aria-hidden="true" data-test="navbar-dial">
+      <Dial position={scrollProgress} size={48} showLabels={false} />
+      <span class="progress-label">
+        {scrollProgress < 0.33 ? 'Manual' : scrollProgress < 0.66 ? 'Assisted' : 'Autonomous'}
+      </span>
     </div>
   </div>
 </nav>
@@ -44,17 +58,17 @@
     top: 0;
     z-index: 50;
     backdrop-filter: blur(12px);
-    background: rgba(244, 240, 234, 0.78);
+    background: rgba(244, 240, 234, 0.82);
     border-bottom: 1px solid var(--rule-soft);
   }
   .inner {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: 1rem 1.5rem;
-    display: flex;
+    padding: 0.85rem 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .brand {
     display: inline-flex;
@@ -74,7 +88,8 @@
   }
   .links {
     display: flex;
-    gap: 1.75rem;
+    gap: 1.6rem;
+    justify-content: center;
   }
   .link {
     font-family: var(--font-mono);
@@ -88,9 +103,29 @@
   .link:hover {
     color: var(--ink);
   }
-  @media (max-width: 640px) {
+  .progress {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .progress-label {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--iron);
+    min-width: 11ch;
+    text-align: right;
+  }
+  @media (max-width: 820px) {
+    .inner {
+      grid-template-columns: auto auto;
+    }
     .links {
       display: none;
+    }
+    .progress {
+      justify-self: end;
     }
   }
 </style>

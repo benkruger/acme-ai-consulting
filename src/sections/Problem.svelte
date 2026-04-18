@@ -1,5 +1,6 @@
 <script>
   import Eyebrow from '../components/Eyebrow.svelte'
+  import SectionCTA from '../components/SectionCTA.svelte'
 
   const problems = [
     {
@@ -40,20 +41,22 @@
       </li>
     {/each}
   </ol>
+
+  <SectionCTA />
 </section>
 
 <style>
   .problem {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: clamp(4rem, 8vw, 8rem) 1.5rem;
+    padding: var(--section-py) 1.5rem 0;
     border-top: 1px solid var(--rule);
   }
   .problem-header {
     max-width: 46ch;
   }
   .problem-title {
-    margin-top: 1.25rem;
+    margin-top: var(--stack-title);
     font-weight: 450;
     font-variation-settings:
       'SOFT' 0,
@@ -61,11 +64,11 @@
     line-height: 1.08;
   }
   .problem-list {
-    margin-top: clamp(2.5rem, 5vw, 4.5rem);
+    margin-top: var(--stack-header-to-body);
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(1.5rem, 3vw, 3rem);
+    gap: clamp(1.75rem, 3vw, 3rem);
   }
   .problem-item {
     position: relative;
@@ -89,7 +92,7 @@
     margin-top: 1rem;
     color: var(--ink-soft);
     font-size: 1rem;
-    max-width: 36ch;
+    max-width: 38ch;
   }
   @media (max-width: 820px) {
     .problem-list {

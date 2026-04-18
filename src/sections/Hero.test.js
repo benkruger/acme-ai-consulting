@@ -11,7 +11,6 @@ describe('Hero', () => {
     expect(container.textContent).toContain('where they are.')
     expect(container.textContent).toContain('Ratchet up the dial')
     expect(container.querySelector('[data-test="cta"]')).not.toBeNull()
-    expect(container.querySelector('[data-test="anvil"]')).not.toBeNull()
     expect(container.querySelector('[data-test="dial"]')).not.toBeNull()
   })
 

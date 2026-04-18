@@ -23,6 +23,20 @@
   --space-xl: 6rem;
   --space-2xl: 10rem;
 
+  /* Vertical section rhythm — three tiers so the page has cadence,
+     not metronome. Open for hero + testimonial + final; default for
+     most narrative; tight for dense card grids. */
+  --section-py: clamp(2.5rem, 4.5vw, 4rem);
+  --section-py-open: clamp(3rem, 5vw, 4.5rem);
+  --section-py-tight: clamp(2rem, 3.5vw, 3rem);
+
+  /* Standardized header → content spacing so every section's
+     "breath" after the title is identical across the page. */
+  --stack-title: 1.25rem;
+  --stack-lede: 1.5rem;
+  --stack-header-to-body: clamp(2.5rem, 5vw, 4rem);
+  --stack-body-to-note: clamp(2rem, 4vw, 3rem);
+
   --maxw: 1240px;
   --maxw-reading: 680px;
 

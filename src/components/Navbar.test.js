@@ -16,15 +16,19 @@ describe('Navbar', () => {
     expect(onNavigate).toHaveBeenCalledWith({ page: 'home' })
   })
 
-  test('renders section anchor links', () => {
+  test('renders eight section anchor links targeting on-page sections', () => {
     const onNavigate = vi.fn()
     const { container } = render(Navbar, { props: { onNavigate } })
     const links = container.querySelectorAll('.link')
-    expect(links.length).toBe(4)
+    expect(links.length).toBe(8)
     expect(Array.from(links).map((l) => l.getAttribute('href'))).toEqual([
       '#problem',
       '#approach',
+      '#tenants',
       '#flow',
+      '#how-we-work',
+      '#resources',
+      '#testimonials',
       '#contact'
     ])
   })
@@ -50,5 +54,28 @@ describe('Navbar', () => {
     const missingLink = container.querySelector('a[href="#approach"]')
     await fireEvent.click(missingLink)
     expect(onNavigate).not.toHaveBeenCalled()
+  })
+
+  test('scroll progress dial reflects passed position with Manual label under 0.33', () => {
+    const { container } = render(Navbar, { props: { onNavigate: vi.fn(), scrollProgress: 0 } })
+    const dial = container.querySelector('[data-test="navbar-dial"]')
+    expect(dial).not.toBeNull()
+    expect(dial.textContent).toContain('Manual')
+  })
+
+  test('progress label reads Assisted in the middle band', () => {
+    const { container } = render(Navbar, {
+      props: { onNavigate: vi.fn(), scrollProgress: 0.5 }
+    })
+    const dial = container.querySelector('[data-test="navbar-dial"]')
+    expect(dial.textContent).toContain('Assisted')
+  })
+
+  test('progress label reads Autonomous near the bottom', () => {
+    const { container } = render(Navbar, {
+      props: { onNavigate: vi.fn(), scrollProgress: 0.9 }
+    })
+    const dial = container.querySelector('[data-test="navbar-dial"]')
+    expect(dial.textContent).toContain('Autonomous')
   })
 })
