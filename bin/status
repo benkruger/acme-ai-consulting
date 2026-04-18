@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# bin/status — report whether this project's local Vite is running.
+set -euo pipefail
+
+LOGS="$HOME/code/logs"
+VITE_PID="$LOGS/acme_vite.pid"
+
+echo "== vite =="
+if [ -f "$VITE_PID" ]; then
+  pid="$(cat "$VITE_PID" 2>/dev/null || true)"
+  if [ -n "${pid:-}" ] && kill -0 "$pid" >/dev/null 2>&1; then
+    echo "running (pid $pid)"
+  else
+    echo "not running (stale pidfile)"
+  fi
+else
+  echo "not running"
+fi

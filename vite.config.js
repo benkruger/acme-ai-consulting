@@ -5,7 +5,8 @@ export default defineConfig({
   plugins: [svelte()],
   server: {
     host: '127.0.0.1',
-    port: 4000,
-    strictPort: true
+    port: 4100,
+    strictPort: true,
+    allowedHosts: ['acme-ai-consulting.dev', 'www.acme-ai-consulting.dev']
   }
 })

@@ -8,3 +8,9 @@ coverage/
 .vite/
 .claude/
 acme-ai-consulting-brief.md
+
+# Local-dev SSL material — regenerate per machine, never commit
+env/nginx/ssl/*.key
+env/nginx/ssl/*.crt
+env/nginx/ssl/*.csr
+env/nginx/ssl/*.pass.key

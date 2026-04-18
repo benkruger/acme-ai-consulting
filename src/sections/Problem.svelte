@@ -55,7 +55,9 @@
   .problem-title {
     margin-top: 1.25rem;
     font-weight: 450;
-    font-variation-settings: 'SOFT' 0, 'opsz' 144;
+    font-variation-settings:
+      'SOFT' 0,
+      'opsz' 144;
     line-height: 1.08;
   }
   .problem-list {

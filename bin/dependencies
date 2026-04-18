@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# FLOW dependency updater for a Svelte/Node project.
+# Invoked by `/flow:flow-start` to refresh deps at the top of each feature.
+#
+# Deleting the lockfile forces npm to re-resolve the full dependency tree
+# within the package.json semver ranges. This is the JS equivalent of
+# `cargo update` — bump every package to its latest-matching version and
+# let failures surface immediately rather than drifting silently.
+#
+# Pin breaking transitives via `"overrides"` in package.json when needed.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+rm -f package-lock.json
+exec npm install

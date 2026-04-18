@@ -1,0 +1,4 @@
+# BEGIN ACME-AI-CONSULTING
+127.0.0.1       acme-ai-consulting.dev
+127.0.0.1       www.acme-ai-consulting.dev
+# END ACME-AI-CONSULTING

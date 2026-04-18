@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# bin/start — start the local dev stack for acme-ai-consulting.
+# Assumes nothing is running. Starts nginx (Homebrew) and backgrounds
+# the Vite dev server on 127.0.0.1:4100. nginx terminates HTTPS at
+# https://acme-ai-consulting.dev and proxies to Vite. Paired with bin/stop.
+#
+# Idempotent: if nginx or Vite is already running, leaves them alone.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+LOGS="$HOME/code/logs"
+NGINX_BIN="$(brew --prefix)/bin/nginx"
+
+say() { echo "$@"; }
+
+mkdir -p "$LOGS"
+
+say "== start acme-ai-consulting =="
+
+say "→ ensuring nginx is running"
+"$NGINX_BIN" >/dev/null 2>&1 || true
+
+VITE_PID="$LOGS/acme_vite.pid"
+if [ -f "$VITE_PID" ] && kill -0 "$(cat "$VITE_PID" 2>/dev/null)" >/dev/null 2>&1; then
+  say "→ vite already running (pid $(cat "$VITE_PID"))"
+else
+  say "→ starting vite on 127.0.0.1:4100"
+  cd "$REPO_ROOT"
+  npm run dev > "$LOGS/acme_vite.log" 2>&1 &
+  echo $! > "$VITE_PID"
+fi
+
+say "started — https://acme-ai-consulting.dev"

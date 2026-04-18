@@ -14,8 +14,9 @@ describe('Problem', () => {
     const items = container.querySelectorAll('.problem-item')
     expect(items.length).toBe(3)
 
-    const numbers = Array.from(container.querySelectorAll('.problem-number'))
-      .map((el) => el.textContent)
+    const numbers = Array.from(container.querySelectorAll('.problem-number')).map(
+      (el) => el.textContent
+    )
     expect(numbers).toEqual(['01', '02', '03'])
 
     expect(container.textContent).toContain("You don't know how far behind you are.")

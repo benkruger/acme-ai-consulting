@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# bin/logs — tail the Vite dev server log for this project.
+LOGS="$HOME/code/logs"
+LOG="$LOGS/acme_vite.log"
+if [ ! -f "$LOG" ]; then
+  echo "No log found at $LOG — run bin/start first." >&2
+  exit 1
+fi
+exec tail -F "$LOG"

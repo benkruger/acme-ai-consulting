@@ -19,15 +19,13 @@
       </h1>
 
       <p class="lede">
-        One engineer, ten pull requests a day. A small team shipping the output of a large one.
-        We come in, map where you stand, and coach every engineer through the transition — at the pace
+        One engineer, ten pull requests a day. A small team shipping the output of a large one. We
+        come in, map where you stand, and coach every engineer through the transition — at the pace
         your organization can absorb.
       </p>
 
       <div class="hero-cta">
-        <CTAButton href={calendarUrl}>
-          Book an AI consultation
-        </CTAButton>
+        <CTAButton href={calendarUrl}>Book an AI consultation</CTAButton>
         <span class="hero-cta-note">30 minutes. No slide decks.</span>
       </div>
     </div>
@@ -75,7 +73,9 @@
   }
   .headline em {
     font-style: italic;
-    font-variation-settings: 'SOFT' 100, 'opsz' 144;
+    font-variation-settings:
+      'SOFT' 100,
+      'opsz' 144;
     color: var(--forge);
     font-weight: 400;
   }

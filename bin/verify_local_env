@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+# bin/verify_local_env — end-to-end local environment QA.
+# Mirrors hh/bin/verify_local_env for this repo.
+#
+# Tears down, installs deps, starts the stack, verifies the site is
+# reachable over HTTPS at both apex and www, verifies the response body
+# is our Svelte SPA, verifies the cert chains against the system trust
+# store (no -k), then tears down again. Exits non-zero on any failure
+# with a targeted message.
+#
+# Runs cleanly before committing anything related to infra — if this
+# passes, the full local HTTPS loop works.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+START="$SCRIPT_DIR/start"
+STOP="$SCRIPT_DIR/stop"
+
+pass() { echo "  PASS: $1"; }
+fail() { echo "  FAIL: $1"; exit 1; }
+
+cleanup() {
+  echo ""
+  echo "cleaning up..."
+  "$STOP" 2>/dev/null || true
+}
+trap cleanup EXIT
+
+echo "== local env QA =="
+echo ""
+
+# 1) Stop any running instances + free port 4100
+echo "stopping existing services..."
+"$STOP" 2>/dev/null || true
+pid="$(lsof -ti TCP:4100 -sTCP:LISTEN 2>/dev/null || true)"
+if [ -n "$pid" ]; then
+  kill "$pid" 2>/dev/null || true
+fi
+
+# 2) Install deps
+echo ""
+echo "installing dependencies..."
+(cd "$REPO_ROOT" && npm install --silent)
+
+# 3) Start the stack
+echo ""
+echo "starting services..."
+"$START"
+
+# 4) Wait for the site to respond (up to 30s)
+wait_for_url() {
+  local url="$1"
+  local label="$2"
+  local status=""
+  for _ in $(seq 1 60); do
+    status="$(curl -sk -o /dev/null -w '%{http_code}' "$url" 2>/dev/null || true)"
+    if [ "$status" = "200" ]; then
+      return 0
+    fi
+    sleep 0.5
+  done
+  fail "$label did not come up (last status: ${status:-none})"
+}
+
+echo ""
+echo "waiting for https://acme-ai-consulting.dev ..."
+wait_for_url "https://acme-ai-consulting.dev" "site"
+
+echo ""
+echo "Test 1: All hostnames reachable over HTTPS"
+
+apex_status="$(curl -sk -o /dev/null -w '%{http_code}' "https://acme-ai-consulting.dev")"
+if [ "$apex_status" = "200" ]; then
+  pass "apex returns 200"
+else
+  fail "apex returned $apex_status (expected 200)"
+fi
+
+www_status="$(curl -sk -o /dev/null -w '%{http_code}' "https://www.acme-ai-consulting.dev")"
+if [ "$www_status" = "200" ]; then
+  pass "www returns 200"
+else
+  fail "www returned $www_status (expected 200)"
+fi
+
+echo ""
+echo "Test 2: Response body is our Svelte SPA"
+body="$(curl -sk "https://acme-ai-consulting.dev")"
+if echo "$body" | grep -q 'id="app"'; then
+  pass "response contains Svelte mount point"
+else
+  fail "response missing '<div id=\"app\">' — nginx may be routing to the wrong server block"
+fi
+
+if echo "$body" | grep -q 'Acme AI Consulting'; then
+  pass "response contains 'Acme AI Consulting' title"
+else
+  fail "response missing 'Acme AI Consulting' — Vite may not be serving our index.html"
+fi
+
+echo ""
+echo "Test 3: Cert chains against system trust store (no -k)"
+if curl -sI "https://acme-ai-consulting.dev" --max-time 10 >/dev/null 2>&1; then
+  pass "cert validates against system trust store"
+else
+  fail "cert does not validate — run env/nginx/install.sh to trust it, or check /etc/ssl/certs/acme-ai-consulting.crt"
+fi
+
+echo ""
+echo "== all tests passed =="

@@ -3,9 +3,7 @@ import { render } from '@testing-library/svelte'
 import Dial from './Dial.svelte'
 
 function getIndicatorAngle(container) {
-  return Number(
-    container.querySelector('[data-test="dial-indicator"]').getAttribute('data-angle')
-  )
+  return Number(container.querySelector('[data-test="dial-indicator"]').getAttribute('data-angle'))
 }
 
 describe('Dial', () => {

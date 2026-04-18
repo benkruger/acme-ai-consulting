@@ -26,7 +26,9 @@
     letter-spacing: 0.02em;
     border: none;
     cursor: pointer;
-    transition: transform 180ms var(--ease-out), background-color 180ms var(--ease-out);
+    transition:
+      transform 180ms var(--ease-out),
+      background-color 180ms var(--ease-out);
   }
   .cta--primary {
     background: var(--ink);

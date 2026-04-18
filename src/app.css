@@ -30,7 +30,9 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -56,13 +58,18 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 500;
   color: var(--ink);
   letter-spacing: -0.015em;
   line-height: 1.05;
-  font-variation-settings: 'SOFT' 0, 'opsz' 144;
+  font-variation-settings:
+    'SOFT' 0,
+    'opsz' 144;
 }
 
 h1 {

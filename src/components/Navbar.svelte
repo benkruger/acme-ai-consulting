@@ -30,11 +30,7 @@
     </a>
     <div class="links" aria-label="Section navigation">
       {#each sections as section (section.id)}
-        <a
-          class="link"
-          href="#{section.id}"
-          onclick={(e) => handleAnchor(e, section.id)}
-        >
+        <a class="link" href="#{section.id}" onclick={(e) => handleAnchor(e, section.id)}>
           {section.label}
         </a>
       {/each}

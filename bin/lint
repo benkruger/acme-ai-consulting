@@ -1,20 +1,35 @@
 #!/usr/bin/env bash
-# FLOW-STUB-UNCONFIGURED (remove this line once you configure a real linter)
 # FLOW linter — called by `bin/flow ci` (and `bin/flow ci --lint`).
+# Three gates must all pass:
+#   1. Style — ban `svelte-ignore` comments (fix the underlying a11y/compiler
+#      issue, don't suppress it). Mirrors hh/web's discipline.
+#   2. ESLint — flat config at project root.
+#   3. svelte-check — type + template validation, warnings fail the gate.
 #
-# Treat every warning as a CI failure so the gate stays meaningful.
-# This stub does nothing yet — uncomment one of the lines below for
-# your toolchain and delete the rest. The exit-0 default keeps fresh
-# primes from blocking CI; you will see the reminder on every CI run
-# until you configure a real linter.
-#
-# Examples:
-#   exec cargo clippy --all-targets -- -D warnings
-#   exec ruff check .
-#   exec go vet ./...
-#   exec rubocop
-#   exec npx eslint .
-#   exec swiftlint --strict
+# Modes:
+#   bin/lint              — run all three gates (CI)
+#   bin/lint --fix        — run ESLint with autofix; style and svelte-check
+#                           still execute afterward to surface remaining issues
+set -euo pipefail
+cd "$(dirname "$0")/.."
 
-echo "bin/lint: no linter configured (stub) — edit $0" >&2
-exit 0
+if [ "${1:-}" = "--fix" ]; then
+  echo "== ESLint --fix =="
+  npx eslint . --fix
+  echo ""
+fi
+
+echo "== Style: svelte-ignore ban =="
+if grep -rn "svelte-ignore" src/ 2>/dev/null; then
+  echo "FAIL: svelte-ignore comments found. Fix the underlying a11y/compiler issue." >&2
+  exit 1
+fi
+echo "No svelte-ignore comments found."
+
+echo ""
+echo "== ESLint =="
+npx eslint .
+
+echo ""
+echo "== svelte-check =="
+exec npx svelte-check --fail-on-warnings

@@ -21,7 +21,8 @@
     <!-- Waist -->
     <path d="M 98 54 L 188 54 L 188 82 L 98 82 Z" />
     <!-- Base with feet -->
-    <path d="M 34 82
+    <path
+      d="M 34 82
              L 232 82
              L 232 110
              L 204 110
@@ -32,7 +33,8 @@
              L 88 128
              L 62 128
              L 62 110
-             L 34 110 Z" />
+             L 34 110 Z"
+    />
   </g>
   <g class="anvil-detail" aria-hidden="true">
     <!-- Face highlight line -->
