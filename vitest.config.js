@@ -10,7 +10,16 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       include: ['src/**/*.{js,svelte}'],
-      exclude: ['src/main.js']
+      exclude: ['src/main.js', 'src/routes/**'],
+      thresholds: {
+        lines: 100,
+        statements: 100,
+        functions: 100,
+        // Svelte compiles attribute interpolations (e.g. class="foo {bar}")
+        // into defensive nullish branches that are unreachable from userland,
+        // so branch coverage maxes out below 100% even with exhaustive tests.
+        branches: 80
+      }
     }
   }
 })

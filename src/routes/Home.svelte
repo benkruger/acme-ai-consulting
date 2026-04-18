@@ -1,8 +1,7 @@
 <script>
-  let { onNavigate } = $props()
+  import Hero from '../sections/Hero.svelte'
+  import Problem from '../sections/Problem.svelte'
 </script>
 
-<section>
-  <h1>Acme AI Consulting</h1>
-  <p>Placeholder home page.</p>
-</section>
+<Hero />
+<Problem />
