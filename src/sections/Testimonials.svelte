@@ -46,7 +46,7 @@
   .testimonials {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py-open) 1.5rem 0;
+    padding: var(--section-py-open) var(--section-px) 0;
     border-top: 1px solid var(--rule);
   }
   .testimonials-header {
@@ -105,6 +105,14 @@
   @media (max-width: 820px) {
     .testimonial-grid {
       grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    .testimonial {
+      padding: 1.5rem 1.25rem;
+    }
+    .testimonial-quote p {
+      font-size: 1.1rem;
     }
   }
 </style>

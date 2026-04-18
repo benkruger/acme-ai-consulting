@@ -57,7 +57,7 @@
   .tenants {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py) 1.5rem 0;
+    padding: var(--section-py) var(--section-px) 0;
     border-top: 1px solid var(--rule);
   }
   .tenants-header {
@@ -128,6 +128,14 @@
   @media (max-width: 820px) {
     .tenants-list {
       grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    .tenant-card {
+      padding: 1.5rem 1.25rem;
+    }
+    .tenant-title {
+      font-size: 1.2rem;
     }
   }
 </style>

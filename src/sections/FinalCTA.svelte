@@ -1,8 +1,21 @@
 <script>
+  import { onMount } from 'svelte'
   import Dial from '../components/Dial.svelte'
   import CTAButton from '../components/CTAButton.svelte'
 
   let { calendarUrl = 'https://cal.com/benkruger/ai-consultation' } = $props()
+
+  let dialSize = $state(200)
+
+  onMount(() => {
+    const mm = window.matchMedia('(max-width: 640px)')
+    const update = () => {
+      dialSize = mm.matches ? 160 : 200
+    }
+    update()
+    mm.addEventListener('change', update)
+    return () => mm.removeEventListener('change', update)
+  })
 </script>
 
 <section id="contact" class="final" data-test="final-cta">
@@ -21,7 +34,7 @@
       </div>
     </div>
     <div class="final-dial" aria-hidden="true">
-      <Dial position={1} size={200} />
+      <Dial position={1} size={dialSize} />
     </div>
   </div>
 
@@ -43,7 +56,7 @@
   .final {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py-open) 1.5rem clamp(2rem, 4vw, 3rem);
+    padding: var(--section-py-open) var(--section-px) clamp(2rem, 4vw, 3rem);
     border-top: 1px solid var(--rule);
   }
   .final-inner {
@@ -146,6 +159,14 @@
     }
     .footer-colophon {
       text-align: left;
+    }
+  }
+  @media (max-width: 640px) {
+    .final-title {
+      font-size: clamp(1.9rem, 7.5vw, 2.75rem);
+    }
+    .final-body {
+      font-size: 0.98rem;
     }
   }
 </style>

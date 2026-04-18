@@ -1,9 +1,22 @@
 <script>
+  import { onMount } from 'svelte'
   import Dial from '../components/Dial.svelte'
   import CTAButton from '../components/CTAButton.svelte'
   import Eyebrow from '../components/Eyebrow.svelte'
 
   let { calendarUrl = 'https://cal.com/benkruger/ai-consultation' } = $props()
+
+  let dialSize = $state(300)
+
+  onMount(() => {
+    const mm = window.matchMedia('(max-width: 640px)')
+    const update = () => {
+      dialSize = mm.matches ? 210 : 300
+    }
+    update()
+    mm.addEventListener('change', update)
+    return () => mm.removeEventListener('change', update)
+  })
 </script>
 
 <section class="hero" data-test="hero">
@@ -29,7 +42,7 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <Dial position={0} size={300} />
+      <Dial position={0} size={dialSize} />
     </div>
   </div>
 
@@ -44,7 +57,7 @@
   .hero {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: clamp(1rem, 2vw, 1.75rem) 1.5rem 0;
+    padding: clamp(1rem, 2vw, 1.75rem) var(--section-px) 0;
   }
   .hero-grid {
     display: grid;
@@ -119,6 +132,24 @@
     .hero-visual {
       order: -1;
       justify-content: flex-start;
+    }
+  }
+  @media (max-width: 640px) {
+    .headline {
+      font-size: clamp(2rem, 8.5vw, 3rem);
+      line-height: 1;
+    }
+    .lede {
+      font-size: 0.98rem;
+    }
+    .hero-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: clamp(1.25rem, 4vw, 2rem);
+    }
+    .hero-meta-rule {
+      display: none;
     }
   }
 </style>

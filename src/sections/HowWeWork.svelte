@@ -73,7 +73,7 @@
   .hww {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py) 1.5rem 0;
+    padding: var(--section-py) var(--section-px) 0;
     border-top: 1px solid var(--rule);
   }
   .hww-header {

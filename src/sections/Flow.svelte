@@ -91,7 +91,7 @@
   .flow {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py-tight) 1.5rem 0;
+    padding: var(--section-py-tight) var(--section-px) 0;
     border-top: 1px solid var(--rule);
   }
   .flow-header {
@@ -212,6 +212,22 @@
   @media (max-width: 820px) {
     .flow-phases {
       grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    .flow-cycle {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+      padding: 1rem 1.25rem;
+    }
+    .cycle-value {
+      font-size: 1.3rem;
+    }
+    .cycle-suffix {
+      display: block;
+      margin-left: 0;
+      margin-top: 0.15rem;
     }
   }
 </style>

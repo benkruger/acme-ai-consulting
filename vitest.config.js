@@ -7,10 +7,11 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     exclude: ['node_modules/**'],
+    setupFiles: ['./src/test-setup.js'],
     coverage: {
       provider: 'v8',
       include: ['src/**/*.{js,svelte}'],
-      exclude: ['src/main.js', 'src/routes/**'],
+      exclude: ['src/main.js', 'src/routes/**', 'src/test-setup.js'],
       thresholds: {
         lines: 100,
         statements: 100,

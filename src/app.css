@@ -29,6 +29,7 @@
   --section-py: clamp(2.5rem, 4.5vw, 4rem);
   --section-py-open: clamp(3rem, 5vw, 4.5rem);
   --section-py-tight: clamp(2rem, 3.5vw, 3rem);
+  --section-px: 1.5rem;
 
   /* Standardized header → content spacing so every section's
      "breath" after the title is identical across the page. */
@@ -113,4 +114,19 @@ a {
 ::selection {
   background: var(--forge);
   color: var(--paper);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-px: 1.25rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 9vw, 6rem);
+  }
+  h2 {
+    font-size: clamp(1.75rem, 6vw, 3.5rem);
+  }
+  body {
+    font-size: 16px;
+  }
 }
