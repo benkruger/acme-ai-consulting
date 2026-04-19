@@ -19,7 +19,7 @@
   }
 </script>
 
-<div class="dial-wrap" style="--dial-size: {size}px" data-test="dial">
+<div class="dial-wrap" style="--dial-default: {size}px" data-test="dial">
   <svg
     class="dial"
     viewBox="0 0 200 200"
@@ -77,9 +77,13 @@
     flex-direction: column;
     align-items: center;
     gap: 0.6rem;
+    width: var(--dial-size, var(--dial-default));
+    max-width: 100%;
   }
   .dial {
     display: block;
+    width: 100%;
+    height: auto;
   }
   .dial-face {
     fill: var(--paper-cool);

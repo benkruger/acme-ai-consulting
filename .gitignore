@@ -14,3 +14,9 @@ env/nginx/ssl/*.key
 env/nginx/ssl/*.crt
 env/nginx/ssl/*.csr
 env/nginx/ssl/*.pass.key
+
+# Playwright MCP artifacts — page dumps + screenshots are session-local
+.playwright-mcp/
+/*.png
+/*.jpeg
+/*.jpg

@@ -33,6 +33,7 @@
     <a class="brand" href="/" onclick={(e) => go(e, 'home')}>
       <span class="brand-mark" aria-hidden="true">●</span>
       <span class="brand-name">Acme AI Consulting</span>
+      <span class="brand-name-compact" aria-hidden="true">Acme/AI</span>
     </a>
 
     <div class="links" aria-label="Section navigation">
@@ -64,7 +65,7 @@
   .inner {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: 0.85rem 1.5rem;
+    padding: 0.85rem var(--section-px);
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
@@ -85,6 +86,9 @@
     color: var(--forge);
     font-size: 1rem;
     line-height: 0;
+  }
+  .brand-name-compact {
+    display: none;
   }
   .links {
     display: flex;
@@ -126,6 +130,47 @@
     }
     .progress {
       justify-self: end;
+    }
+  }
+  @media (max-width: 480px) {
+    .inner {
+      padding: 0.7rem var(--section-px);
+      gap: 0.75rem;
+    }
+    .brand-name {
+      display: none;
+    }
+    .brand-name-compact {
+      display: inline;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+    .progress-label {
+      display: none;
+    }
+  }
+  @media (max-height: 500px) and (orientation: landscape) {
+    .inner {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      grid-template-columns: auto auto;
+    }
+    .links {
+      display: none;
+    }
+    .progress-label {
+      display: none;
+    }
+    .progress {
+      justify-self: end;
+    }
+    .brand-name {
+      display: none;
+    }
+    .brand-name-compact {
+      display: inline;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
     }
   }
 </style>

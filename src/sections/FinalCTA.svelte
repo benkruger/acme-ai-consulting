@@ -1,21 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
   import Dial from '../components/Dial.svelte'
   import CTAButton from '../components/CTAButton.svelte'
 
   let { calendarUrl = 'https://cal.com/acme-ai-consultating' } = $props()
-
-  let dialSize = $state(200)
-
-  onMount(() => {
-    const mm = window.matchMedia('(max-width: 640px)')
-    const update = () => {
-      dialSize = mm.matches ? 160 : 200
-    }
-    update()
-    mm.addEventListener('change', update)
-    return () => mm.removeEventListener('change', update)
-  })
 </script>
 
 <section id="contact" class="final" data-test="final-cta">
@@ -34,7 +21,7 @@
       </div>
     </div>
     <div class="final-dial" aria-hidden="true">
-      <Dial position={1} size={dialSize} />
+      <Dial position={1} size={200} />
     </div>
   </div>
 
@@ -101,6 +88,7 @@
   .final-dial {
     display: flex;
     justify-content: center;
+    --dial-size: clamp(160px, 18vw, 200px);
   }
   .footer {
     margin-top: clamp(4rem, 6vw, 6rem);
@@ -150,9 +138,14 @@
     .final-inner {
       grid-template-columns: 1fr;
     }
+    .final-dial {
+      justify-content: flex-start;
+      --dial-size: clamp(140px, 34vw, 180px);
+    }
     .footer {
       grid-template-columns: 1fr;
       text-align: left;
+      gap: 0.85rem;
     }
     .footer-links {
       justify-content: flex-start;
@@ -167,6 +160,43 @@
     }
     .final-body {
       font-size: 0.98rem;
+    }
+    .final-dial {
+      --dial-size: clamp(130px, 38vw, 160px);
+    }
+  }
+  @media (max-height: 500px) and (orientation: landscape) {
+    .final-inner {
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    .final-dial {
+      justify-content: center;
+      --dial-size: clamp(110px, 28vh, 150px);
+    }
+    .final-dial :global(.dial-labels) {
+      display: none;
+    }
+    .final-title {
+      font-size: clamp(1.5rem, 4.5vw, 2.25rem);
+    }
+    .final-body {
+      margin-top: 0.85rem;
+      font-size: 0.92rem;
+    }
+    .final-cta {
+      margin-top: 1rem;
+    }
+    .footer {
+      margin-top: 2rem;
+      grid-template-columns: auto 1fr auto;
+      text-align: initial;
+    }
+    .footer-links {
+      justify-content: center;
+    }
+    .footer-colophon {
+      text-align: right;
     }
   }
 </style>

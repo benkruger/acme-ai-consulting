@@ -29,7 +29,8 @@
   --section-py: clamp(2.5rem, 4.5vw, 4rem);
   --section-py-open: clamp(3rem, 5vw, 4.5rem);
   --section-py-tight: clamp(2rem, 3.5vw, 3rem);
-  --section-px: 1.5rem;
+  --section-px-base: 1.5rem;
+  --section-px: max(var(--section-px-base), env(safe-area-inset-left));
 
   /* Standardized header → content spacing so every section's
      "breath" after the title is identical across the page. */
@@ -71,6 +72,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 h1,
@@ -118,7 +120,7 @@ a {
 
 @media (max-width: 640px) {
   :root {
-    --section-px: 1.25rem;
+    --section-px-base: 1.15rem;
   }
   h1 {
     font-size: clamp(2rem, 9vw, 6rem);
@@ -128,5 +130,26 @@ a {
   }
   body {
     font-size: 16px;
+  }
+}
+
+/* Mobile landscape: iPhone/Android phones held sideways. Short
+   viewport + wide enough to keep multi-column. We tighten the
+   vertical rhythm, shrink the hero dial, and keep the copy next
+   to the visual instead of letting it stack. */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --section-py: clamp(1.5rem, 5vh, 2.5rem);
+    --section-py-open: clamp(1.75rem, 6vh, 3rem);
+    --section-py-tight: clamp(1.25rem, 4vh, 2rem);
+    --stack-header-to-body: clamp(1.25rem, 3vh, 2rem);
+    --stack-body-to-note: clamp(1rem, 3vh, 1.75rem);
+    --section-px-base: max(1.25rem, env(safe-area-inset-left));
+  }
+  h1 {
+    font-size: clamp(1.75rem, 5.5vw, 3rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 4.5vw, 2.25rem);
   }
 }
