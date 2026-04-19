@@ -3,7 +3,7 @@
   import Dial from '../components/Dial.svelte'
   import CTAButton from '../components/CTAButton.svelte'
 
-  let { calendarUrl = 'https://cal.com/benkruger/ai-consultation' } = $props()
+  let { calendarUrl = 'https://cal.com/acme-ai-consultating' } = $props()
 
   let dialSize = $state(200)
 

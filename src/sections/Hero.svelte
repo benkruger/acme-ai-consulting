@@ -4,7 +4,7 @@
   import CTAButton from '../components/CTAButton.svelte'
   import Eyebrow from '../components/Eyebrow.svelte'
 
-  let { calendarUrl = 'https://cal.com/benkruger/ai-consultation' } = $props()
+  let { calendarUrl = 'https://cal.com/acme-ai-consultating' } = $props()
 
   let dialSize = $state(300)
 

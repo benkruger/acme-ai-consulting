@@ -2,7 +2,7 @@
   import CTAButton from './CTAButton.svelte'
 
   let {
-    calendarUrl = 'https://cal.com/benkruger/ai-consultation',
+    calendarUrl = 'https://cal.com/acme-ai-consultating',
     label = 'Book a consultation',
     note = '30 minutes. No slide decks.'
   } = $props()

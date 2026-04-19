@@ -17,7 +17,7 @@ describe('Hero', () => {
   test('uses default calendarUrl for CTA', () => {
     const { container } = render(Hero)
     const cta = container.querySelector('[data-test="cta"]')
-    expect(cta.getAttribute('href')).toBe('https://cal.com/benkruger/ai-consultation')
+    expect(cta.getAttribute('href')).toBe('https://cal.com/acme-ai-consultating')
   })
 
   test('respects calendarUrl override', () => {

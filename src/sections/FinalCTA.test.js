@@ -12,7 +12,7 @@ describe('FinalCTA', () => {
   test('renders headline, CTA, dial, and footer Flow link', () => {
     const { container } = render(FinalCTA)
     const cta = container.querySelector('[data-test="cta"]')
-    expect(cta.getAttribute('href')).toBe('https://cal.com/benkruger/ai-consultation')
+    expect(cta.getAttribute('href')).toBe('https://cal.com/acme-ai-consultating')
     expect(container.querySelector('[data-test="dial"]')).not.toBeNull()
     const flowLink = container.querySelector('.footer-links a')
     expect(flowLink.getAttribute('href')).toBe('https://github.com/benkruger/flow')
