@@ -9,7 +9,7 @@
 <section class="hero" data-test="hero">
   <div class="hero-grid">
     <div class="hero-copy">
-      <Eyebrow number="00">Agentic SDLC consulting</Eyebrow>
+      <Eyebrow number="00">AI software dev & process consulting</Eyebrow>
       <h1 class="headline">
         Meet your team<br />
         where they are.<br />
@@ -18,17 +18,16 @@
       </h1>
 
       <p class="lede">
-        Agentic development: one engineer ships ten pull requests a day. A small team ships the
-        output of a much bigger one.
+        One engineer ships ten pull requests a day. A small team ships the output of a much bigger
+        one.
       </p>
       <p class="lede">
-        We come in, map where you stand, and coach every engineer through the transition — at a pace
-        your organization can absorb.
+        We come in, map where you stand, and coach every engineer through the transition.
       </p>
 
       <div class="hero-cta">
         <CTAButton href={calendarUrl}>Book a consultation</CTAButton>
-        <span class="hero-cta-note">30 minutes. No slide decks.</span>
+        <span class="hero-cta-note">Bring a real problem from this week.</span>
       </div>
     </div>
 
@@ -36,19 +35,13 @@
       <Dial position={0} size={300} animated />
     </div>
   </div>
-
-  <div class="hero-meta" aria-hidden="true">
-    <span>ACME/AI-CONSULTING</span>
-    <span class="hero-meta-rule"></span>
-    <span>EST. 2026 · SMALL TEAMS · BIG OUTPUT</span>
-  </div>
 </section>
 
 <style>
   .hero {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: clamp(1rem, 2vw, 1.75rem) var(--section-px) 0;
+    padding: clamp(1rem, 2vw, 1.75rem) var(--section-px) var(--section-py);
   }
   .hero-grid {
     display: grid;
@@ -83,9 +76,9 @@
   .hero-cta {
     margin-top: 1.75rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1.25rem;
-    flex-wrap: wrap;
   }
   .hero-cta-note {
     font-family: var(--font-mono);
@@ -98,22 +91,6 @@
     display: flex;
     justify-content: center;
     --dial-size: clamp(220px, 26vw, 300px);
-  }
-  .hero-meta {
-    margin-top: clamp(1.25rem, 2.5vw, 2rem);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    color: var(--iron);
-    text-transform: uppercase;
-  }
-  .hero-meta-rule {
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
   }
   /* Tablet/mobile portrait: stack, dial as a poster above the copy. */
   @media (max-width: 820px) and (orientation: portrait) {
@@ -147,15 +124,6 @@
     }
     .lede {
       font-size: 0.98rem;
-    }
-    .hero-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-      margin-top: clamp(1.25rem, 4vw, 2rem);
-    }
-    .hero-meta-rule {
-      display: none;
     }
   }
   /* Mobile landscape: short viewport, two-column so the dial and
@@ -191,11 +159,6 @@
     }
     .hero-cta {
       margin-top: 1rem;
-      gap: 0.9rem;
-    }
-    .hero-meta {
-      margin-top: 1rem;
-      font-size: 0.6rem;
       gap: 0.75rem;
     }
   }

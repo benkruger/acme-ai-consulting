@@ -53,10 +53,6 @@
         N developers × N machines × N features, running in parallel, without stepping on each other.</strong
       >
     </p>
-    <p class="flow-lede">
-      Every engagement runs on Flow. The tenants are the destination. Flow is the vehicle that gets
-      you there safely.
-    </p>
     <a class="flow-repo" href="https://github.com/benkruger/flow" target="_blank" rel="noreferrer">
       github.com/benkruger/flow →
     </a>
@@ -80,9 +76,8 @@
   </div>
 
   <p class="flow-note">
-    Ten engineers × ten PRs a day is a hundred PRs hitting <code>main</code>. Sounds terrifying.
-    Flow makes it routine — the merge queue and conflict mechanics disappear into the phases. We go
-    deep on that in the assessment.
+    Ten engineers × ten PRs a day is a hundred PRs hitting <code>main</code>. Flow makes that
+    routine — the merge queue and conflict mechanics disappear into the phases.
   </p>
 </section>
 
@@ -90,7 +85,7 @@
   .flow {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py-tight) var(--section-px) 0;
+    padding: var(--section-py) var(--section-px);
     border-top: 1px solid var(--rule);
   }
   .flow-header {

@@ -14,14 +14,10 @@
 
   <div class="approach-grid">
     <div class="approach-body">
-      <p>
-        Today's AI-assisted development lets one engineer ship ten pull requests a day. Sometimes
-        more — the real ceilings are hardware and tokens, not headcount. This isn't hypothetical.
-        It's what modern development looks like, right now, on the tools available today.
-      </p>
+      <p>The real ceilings are hardware and tokens, not headcount.</p>
       <p>
         Your existing engineers, shipping the output of a much bigger team. You build the thing
-        you've been pushing off, or you ship faster, or you carve out room to actually think.
+        you've been pushing off, ship faster, and carve out room to think.
       </p>
     </div>
 
@@ -35,23 +31,19 @@
       </div>
       <div class="fit-block">
         <h3 class="fit-label">Who this is not for</h3>
-        <p>
-          Mid-size and enterprise orgs. I'm one consultant — I work best with lean teams, and this
-          methodology is optimized for them. Larger orgs have different constraints that deserve
-          different solutions.
-        </p>
+        <p>Mid-size and enterprise orgs. I'm one consultant; this is optimized for lean teams.</p>
       </div>
     </aside>
   </div>
 
-  <SectionCTA />
+  <SectionCTA note="If that's your team, let's talk." />
 </section>
 
 <style>
   .approach {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py) var(--section-px) 0;
+    padding: var(--section-py) var(--section-px);
     border-top: 1px solid var(--rule);
   }
   .approach-header {

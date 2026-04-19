@@ -23,12 +23,9 @@
   --space-xl: 6rem;
   --space-2xl: 10rem;
 
-  /* Vertical section rhythm — three tiers so the page has cadence,
-     not metronome. Open for hero + testimonial + final; default for
-     most narrative; tight for dense card grids. */
+  /* Vertical section rhythm — one tier so every horizontal rule
+     has identical cushion above and below. */
   --section-py: clamp(2.5rem, 4.5vw, 4rem);
-  --section-py-open: clamp(3rem, 5vw, 4.5rem);
-  --section-py-tight: clamp(2rem, 3.5vw, 3rem);
   --section-px-base: 1.5rem;
   --section-px: max(var(--section-px-base), env(safe-area-inset-left));
 
@@ -140,8 +137,6 @@ a {
 @media (max-height: 500px) and (orientation: landscape) {
   :root {
     --section-py: clamp(1.5rem, 5vh, 2.5rem);
-    --section-py-open: clamp(1.75rem, 6vh, 3rem);
-    --section-py-tight: clamp(1.25rem, 4vh, 2rem);
     --stack-header-to-body: clamp(1.25rem, 3vh, 2rem);
     --stack-body-to-note: clamp(1rem, 3vh, 1.75rem);
     --section-px-base: max(1.25rem, env(safe-area-inset-left));

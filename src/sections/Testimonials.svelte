@@ -41,7 +41,7 @@
   .testimonials {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py-open) var(--section-px) 0;
+    padding: var(--section-py) var(--section-px);
     border-top: 1px solid var(--rule);
   }
   .testimonials-header {

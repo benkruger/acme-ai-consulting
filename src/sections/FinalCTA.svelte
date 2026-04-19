@@ -43,7 +43,7 @@
   .final {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py-open) var(--section-px) clamp(2rem, 4vw, 3rem);
+    padding: var(--section-py) var(--section-px) clamp(2rem, 4vw, 3rem);
     border-top: 1px solid var(--rule);
   }
   .final-inner {

@@ -9,9 +9,9 @@ describe('Approach', () => {
     expect(container.querySelector('[data-test="approach"]')).not.toBeNull()
   })
 
-  test('covers the 10x headline promise and who-this-is-for split', () => {
+  test('states the real ceiling and splits fit vs. not fit', () => {
     const { container } = render(Approach)
-    expect(container.textContent).toContain('ten pull requests a day')
+    expect(container.textContent).toContain('hardware and tokens')
     expect(container.textContent).toContain('Who this is for')
     expect(container.textContent).toContain('Who this is not for')
     expect(container.textContent).toContain('twenty engineers')

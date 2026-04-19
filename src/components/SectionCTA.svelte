@@ -19,9 +19,9 @@
   .section-cta {
     margin-top: clamp(2rem, 4vw, 3rem);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1.25rem;
-    flex-wrap: wrap;
   }
   .section-cta-note {
     font-family: var(--font-mono);

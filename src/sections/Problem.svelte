@@ -10,12 +10,12 @@
     {
       number: '02',
       title: "You're overwhelmed.",
-      body: "New tools, new models, new best practices every week. Staying current is a full-time job. Your team can't keep up — and neither can anyone else trying to do it alone."
+      body: "New tools, new models, new best practices every week. Staying current is a full-time job. Your team can't keep up."
     },
     {
       number: '03',
       title: "You don't know where to start.",
-      body: "Without clarity on your position or a path forward, people tackle AI adoption separately, inconsistently, or in secret. No coordinated strategy. Everyone's improvising."
+      body: "Without clarity on your position or a path forward, people tackle AI adoption separately, inconsistently, or in secret. Everyone's improvising."
     }
   ]
 </script>
@@ -46,7 +46,7 @@
   .problem {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py) var(--section-px) 0;
+    padding: var(--section-py) var(--section-px);
     border-top: 1px solid var(--rule);
   }
   .problem-header {

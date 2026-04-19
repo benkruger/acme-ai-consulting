@@ -54,26 +54,22 @@
         them through every stage of turning the dial — from reviewing every diff manually, to
         trusting the system to ship overnight.
       </p>
-      <p class="phase-body">
-        We answer the doubts. We overcome the resistance. We build the muscle memory.
-      </p>
     </article>
   </div>
 
   <p class="hww-why">
-    <strong>Why both phases matter.</strong> Email instructions don't change behavior. Slack threads don't
-    change behavior. Sitting next to someone and doing the work together does. That's why assessment alone
-    isn't enough — and why coaching without the map is guesswork.
+    <strong>Why both phases matter.</strong> Behavior changes when you sit next to someone and do the
+    work. Assessment without coaching is a PDF; coaching without the map is improv.
   </p>
 
-  <SectionCTA />
+  <SectionCTA note="Assessment first. Coaching as you ratchet up." />
 </section>
 
 <style>
   .hww {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py) var(--section-px) 0;
+    padding: var(--section-py) var(--section-px);
     border-top: 1px solid var(--rule);
   }
   .hww-header {

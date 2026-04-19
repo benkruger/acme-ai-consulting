@@ -15,7 +15,7 @@
     {
       number: '03',
       title: '100% deep test coverage.',
-      body: 'Not just lines. Branches, dependencies, design patterns. Parallelized. Fast. Deep coverage does three things: it proves the code works, it surfaces over-engineering, and it keeps AI from drifting. Tests are the guardrails that let the dial go higher.'
+      body: 'Not just lines. Branches, dependencies, design patterns. Parallelized. Fast. Proves the code works, surfaces over-engineering, keeps AI from drifting.'
     }
   ]
 </script>
@@ -43,18 +43,13 @@
       </li>
     {/each}
   </ol>
-
-  <p class="tenants-note">
-    You don't start at 100%. You work toward it. No team hits all three on day one — but without
-    them, full autonomy isn't safe. We help you get there.
-  </p>
 </section>
 
 <style>
   .tenants {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py) var(--section-px) 0;
+    padding: var(--section-py) var(--section-px);
     border-top: 1px solid var(--rule);
   }
   .tenants-header {
@@ -113,14 +108,6 @@
     margin-top: 0.9rem;
     font-size: 0.98rem;
     color: var(--ink-soft);
-  }
-  .tenants-note {
-    margin-top: var(--stack-body-to-note);
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--rule);
-    max-width: 80ch;
-    font-size: 0.98rem;
-    color: var(--iron);
   }
   @media (max-width: 820px) {
     .tenants-list {

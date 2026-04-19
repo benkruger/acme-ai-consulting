@@ -36,29 +36,23 @@
         Code-specialized SLMs from teams like
         <a class="solution-link" href="https://neurometric.ai" target="_blank" rel="noreferrer"
           >Neurometric.ai</a
-        > — faster, cheaper, and shaped to the way engineers actually work.
+        > — faster and cheaper.
       </p>
     </li>
     <li class="solution">
       <h4 class="solution-title">Fine-tuned models</h4>
-      <p>
-        Tuned to your stack, your codebase, your conventions — a model that reads like your team
-        wrote it.
-      </p>
+      <p>Tuned to your stack, your codebase, your conventions.</p>
     </li>
     <li class="solution">
       <h4 class="solution-title">Local inference</h4>
-      <p>
-        Llama 3 8B and its peers run on hardware you already own. One Mac Studio per seat, shipping
-        overnight while you sleep.
-      </p>
+      <p>Llama 3 8B and its peers run on hardware you already own. One Mac Studio per seat.</p>
     </li>
   </ol>
 
   <div class="resources-closer">
     <p>
-      Flow already runs these in production. As they land on your team — and they will — the token
-      constraint disappears. The only limits left:
+      Flow already runs these in production. As they land on your team, the token constraint
+      disappears. The only limits left:
     </p>
     <ul role="list" class="resources-remain">
       <li><strong>Hardware capacity.</strong> A well-specced Mac Studio pays off in weeks.</li>
@@ -77,7 +71,7 @@
   .resources {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: var(--section-py) var(--section-px) 0;
+    padding: var(--section-py) var(--section-px);
     border-top: 1px solid var(--rule);
   }
   .resources-header {
