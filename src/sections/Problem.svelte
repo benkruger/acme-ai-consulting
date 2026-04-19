@@ -50,7 +50,7 @@
     border-top: 1px solid var(--rule);
   }
   .problem-header {
-    max-width: 46ch;
+    max-width: none;
   }
   .problem-title {
     margin-top: var(--stack-title);
@@ -89,7 +89,7 @@
     margin-top: 1rem;
     color: var(--ink-soft);
     font-size: 1rem;
-    max-width: 38ch;
+    max-width: 80ch;
   }
   @media (max-width: 820px) {
     .problem-list {

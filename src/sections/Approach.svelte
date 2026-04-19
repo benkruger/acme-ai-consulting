@@ -55,7 +55,7 @@
     border-top: 1px solid var(--rule);
   }
   .approach-header {
-    max-width: 52ch;
+    max-width: none;
   }
   .approach-title {
     margin-top: var(--stack-title);
@@ -79,7 +79,7 @@
   .approach-body p {
     font-size: 1.05rem;
     color: var(--ink-soft);
-    max-width: 52ch;
+    max-width: 80ch;
   }
   .approach-body p + p {
     margin-top: 1.25rem;
@@ -103,7 +103,7 @@
   .fit-block p {
     color: var(--ink-soft);
     font-size: 0.98rem;
-    max-width: 36ch;
+    max-width: 80ch;
   }
   @media (max-width: 820px) {
     .approach-grid {

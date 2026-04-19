@@ -58,7 +58,7 @@
     border-top: 1px solid var(--rule);
   }
   .tenants-header {
-    max-width: 52ch;
+    max-width: none;
   }
   .tenants-title {
     margin-top: var(--stack-title);
@@ -76,7 +76,7 @@
     margin-top: var(--stack-lede);
     font-size: 1.05rem;
     color: var(--ink-soft);
-    max-width: 56ch;
+    max-width: 80ch;
   }
   .tenants-lede em {
     font-style: italic;
@@ -118,7 +118,7 @@
     margin-top: var(--stack-body-to-note);
     padding-top: 1.5rem;
     border-top: 1px solid var(--rule);
-    max-width: 60ch;
+    max-width: 80ch;
     font-size: 0.98rem;
     color: var(--iron);
   }

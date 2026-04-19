@@ -81,7 +81,7 @@
     border-top: 1px solid var(--rule);
   }
   .resources-header {
-    max-width: 56ch;
+    max-width: none;
   }
   .resources-title {
     margin-top: var(--stack-title);
@@ -132,7 +132,7 @@
     font-weight: 450;
     letter-spacing: -0.01em;
     color: var(--ink);
-    max-width: 44ch;
+    max-width: 80ch;
   }
   .solutions {
     margin-top: clamp(1.5rem, 3vw, 2.5rem);
@@ -169,7 +169,7 @@
     margin-top: var(--stack-header-to-body);
     padding-top: 1.5rem;
     border-top: 1px solid var(--rule);
-    max-width: 60ch;
+    max-width: 80ch;
   }
   .resources-closer p {
     color: var(--ink-soft);

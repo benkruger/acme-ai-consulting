@@ -45,7 +45,7 @@
     border-top: 1px solid var(--rule);
   }
   .testimonials-header {
-    max-width: 46ch;
+    max-width: none;
   }
   .testimonials-title {
     margin-top: var(--stack-title);

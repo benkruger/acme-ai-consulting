@@ -94,7 +94,7 @@
     border-top: 1px solid var(--rule);
   }
   .flow-header {
-    max-width: 60ch;
+    max-width: none;
   }
   .flow-title {
     margin-top: var(--stack-title);
@@ -112,7 +112,7 @@
     margin-top: var(--stack-lede);
     font-size: 1.05rem;
     color: var(--ink-soft);
-    max-width: 56ch;
+    max-width: 80ch;
   }
   .flow-lede strong {
     color: var(--ink);
@@ -154,7 +154,7 @@
     margin-top: 0.85rem;
     font-size: 0.98rem;
     color: var(--ink-soft);
-    max-width: 48ch;
+    max-width: 80ch;
   }
   .flow-cycle {
     margin-top: var(--stack-body-to-note);
@@ -190,7 +190,7 @@
     margin-top: var(--stack-body-to-note);
     padding-top: 1.5rem;
     border-top: 1px solid var(--rule);
-    max-width: 60ch;
+    max-width: 80ch;
     font-size: 0.98rem;
     color: var(--iron);
   }

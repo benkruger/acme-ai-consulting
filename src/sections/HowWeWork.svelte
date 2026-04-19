@@ -77,7 +77,7 @@
     border-top: 1px solid var(--rule);
   }
   .hww-header {
-    max-width: 56ch;
+    max-width: none;
   }
   .hww-title {
     margin-top: var(--stack-title);
@@ -95,7 +95,7 @@
     margin-top: var(--stack-lede);
     font-size: 1.05rem;
     color: var(--ink-soft);
-    max-width: 56ch;
+    max-width: 80ch;
   }
   .hww-phases {
     margin-top: var(--stack-header-to-body);
@@ -164,7 +164,7 @@
     margin-top: var(--stack-body-to-note);
     padding-top: 1.5rem;
     border-top: 1px solid var(--rule);
-    max-width: 60ch;
+    max-width: 80ch;
     font-size: 0.98rem;
     color: var(--iron);
   }

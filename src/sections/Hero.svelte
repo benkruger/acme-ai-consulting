@@ -88,7 +88,7 @@
     margin-top: 1.25rem;
     font-size: 1.02rem;
     color: var(--ink-soft);
-    max-width: 46ch;
+    max-width: 80ch;
   }
   .lede + .lede {
     margin-top: 0.85rem;

@@ -82,7 +82,7 @@
     margin-top: 1.5rem;
     font-size: 1.05rem;
     color: var(--ink-soft);
-    max-width: 48ch;
+    max-width: 80ch;
   }
   .final-cta {
     margin-top: 2rem;
