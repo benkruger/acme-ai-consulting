@@ -20,3 +20,12 @@ env/nginx/ssl/*.pass.key
 /*.png
 /*.jpeg
 /*.jpg
+
+# Ephemeral FLOW staging files — written by commit / issue skills and
+# deleted by their respective Rust commands after use. When a command
+# fails before cleanup (e.g. CI fails inside finalize-commit), the
+# file is left behind and git add -A will stage it on retry.
+.flow-commit-msg
+.flow-issue-body
+.flow-issue-body-*
+.flow-states/

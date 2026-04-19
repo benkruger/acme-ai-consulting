@@ -23,10 +23,7 @@
 <section id="problem" class="problem" data-test="problem">
   <header class="problem-header">
     <Eyebrow number="01">The problem</Eyebrow>
-    <h2 class="problem-title">
-      Three things every small engineering team is running into,<br />
-      whether they've named them or not.
-    </h2>
+    <h2 class="problem-title">Three things every small engineering team already feels.</h2>
   </header>
 
   <ol class="problem-list" role="list">
