@@ -13,10 +13,10 @@ describe('Flow', () => {
     const { container } = render(Flow)
     const phases = container.querySelectorAll('.phase')
     expect(phases.length).toBe(6)
-    const numbers = Array.from(container.querySelectorAll('.phase-number')).map(
-      (el) => el.textContent
+    const titles = Array.from(container.querySelectorAll('.phase-title')).map((el) =>
+      el.textContent.trim().split(' —')[0].trim()
     )
-    expect(numbers).toEqual(['01', '02', '03', '04', '05', '06'])
+    expect(titles).toEqual(['Start', 'Plan', 'Code', 'Code Review', 'Learn', 'Complete'])
     const repoLink = container.querySelector('.flow-repo')
     expect(repoLink.getAttribute('href')).toBe('https://github.com/benkruger/flow')
     expect(container.textContent).toContain('~90 min')

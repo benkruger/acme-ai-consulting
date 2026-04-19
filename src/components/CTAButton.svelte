@@ -31,11 +31,11 @@
       background-color 180ms var(--ease-out);
   }
   .cta--primary {
-    background: var(--ink);
+    background: var(--forge);
     color: var(--paper);
   }
   .cta--primary:hover {
-    background: var(--forge);
+    background: var(--forge-hot);
     transform: translateY(-1px);
   }
   .cta--ghost {

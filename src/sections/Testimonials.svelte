@@ -35,11 +35,6 @@
       </figure>
     {/each}
   </div>
-
-  <p class="testimonials-note">
-    Agentic software development is new. A long track record doesn't exist yet — ours grows with
-    every engagement. Every new client lands here.
-  </p>
 </section>
 
 <style>
@@ -92,14 +87,6 @@
     font-size: 0.78rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--iron);
-  }
-  .testimonials-note {
-    margin-top: var(--stack-body-to-note);
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--rule);
-    max-width: 60ch;
-    font-size: 0.95rem;
     color: var(--iron);
   }
   @media (max-width: 820px) {

@@ -26,10 +26,10 @@
 
   <div class="hww-phases">
     <article class="phase-block">
-      <div class="phase-meta">
+      <h3 class="phase-heading">
         <span class="phase-tag">Phase 1</span>
-        <h3 class="phase-heading">Assessment &amp; Preparation</h3>
-      </div>
+        <span class="phase-name">Assessment &amp; Preparation</span>
+      </h3>
       <p class="phase-intro">We come in and evaluate where you actually are.</p>
       <ul class="phase-checks" role="list">
         {#each assessmentChecks as check (check)}
@@ -42,10 +42,10 @@
     </article>
 
     <article class="phase-block">
-      <div class="phase-meta">
+      <h3 class="phase-heading">
         <span class="phase-tag">Phase 2</span>
-        <h3 class="phase-heading">Coaching &amp; Dial Progression</h3>
-      </div>
+        <span class="phase-name">Coaching &amp; Dial Progression</span>
+      </h3>
       <p class="phase-intro">
         The foundation is set. Now the real work begins. We sit with your engineers.
       </p>
@@ -107,12 +107,6 @@
     padding-top: 1.5rem;
     border-top: 2px solid var(--ink);
   }
-  .phase-meta {
-    display: flex;
-    align-items: baseline;
-    gap: 0.85rem;
-    flex-wrap: wrap;
-  }
   .phase-tag {
     font-family: var(--font-mono);
     font-size: 0.72rem;
@@ -120,11 +114,18 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--forge);
+    margin-right: 0.75rem;
+    vertical-align: 0.2em;
   }
   .phase-heading {
+    font-family: var(--font-display);
     font-size: clamp(1.25rem, 1.6vw, 1.55rem);
-    font-weight: 500;
+    font-weight: 550;
     letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .phase-name {
+    font-family: var(--font-display);
   }
   .phase-intro {
     margin-top: 0.9rem;

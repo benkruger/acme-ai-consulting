@@ -21,9 +21,4 @@ describe('Tenants', () => {
     expect(container.textContent).toContain('Zero errors')
     expect(container.textContent).toContain('100% deep test coverage')
   })
-
-  test('includes the post-tenants CTA', () => {
-    const { container } = render(Tenants)
-    expect(container.querySelector('[data-test="section-cta"]')).not.toBeNull()
-  })
 })

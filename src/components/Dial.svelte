@@ -1,5 +1,5 @@
 <script>
-  let { position = 0, size = 180, showLabels = true } = $props()
+  let { position = 0, size = 180, showLabels = true, animated = false } = $props()
 
   const clamp = (value, lo, hi) => Math.max(lo, Math.min(hi, value))
   const pos = $derived(clamp(position, 0, 1))
@@ -50,7 +50,8 @@
 
     <g
       class="dial-indicator"
-      transform="rotate({angle} 100 100)"
+      class:dial-indicator--animated={animated}
+      transform={animated ? undefined : `rotate(${angle} 100 100)`}
       data-test="dial-indicator"
       data-angle={angle}
     >
@@ -121,5 +122,30 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--iron);
+  }
+
+  .dial-indicator--animated {
+    transform-origin: 100px 100px;
+    animation: dial-loop 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  @keyframes dial-loop {
+    0%,
+    8% {
+      transform: rotate(-120deg);
+    }
+    45%,
+    55% {
+      transform: rotate(120deg);
+    }
+    92%,
+    100% {
+      transform: rotate(-120deg);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dial-indicator--animated {
+      animation: none;
+      transform: rotate(-120deg);
+    }
   }
 </style>

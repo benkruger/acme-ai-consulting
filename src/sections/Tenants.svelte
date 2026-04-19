@@ -1,6 +1,5 @@
 <script>
   import Eyebrow from '../components/Eyebrow.svelte'
-  import SectionCTA from '../components/SectionCTA.svelte'
 
   const tenants = [
     {
@@ -49,8 +48,6 @@
     You don't start at 100%. You work toward it. No team hits all three on day one — but without
     them, full autonomy isn't safe. We help you get there.
   </p>
-
-  <SectionCTA />
 </section>
 
 <style>

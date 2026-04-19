@@ -9,7 +9,7 @@ describe('SectionCTA', () => {
     expect(wrap).not.toBeNull()
     const anchor = container.querySelector('[data-test="cta"]')
     expect(anchor.getAttribute('href')).toBe('https://cal.com/benkruger/ai-consultation')
-    expect(container.textContent).toContain('Book an AI consultation')
+    expect(container.textContent).toContain('Book a consultation')
     expect(container.textContent).toContain('30 minutes. No slide decks.')
   })
 

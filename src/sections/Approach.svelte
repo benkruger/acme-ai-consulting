@@ -1,10 +1,11 @@
 <script>
   import Eyebrow from '../components/Eyebrow.svelte'
+  import SectionCTA from '../components/SectionCTA.svelte'
 </script>
 
 <section id="approach" class="approach" data-test="approach">
   <header class="approach-header">
-    <Eyebrow number="02">The approach</Eyebrow>
+    <Eyebrow number="02">The solution</Eyebrow>
     <h2 class="approach-title">
       Meet you where you are.<br />
       <em>Guide you forward.</em>
@@ -42,6 +43,8 @@
       </div>
     </aside>
   </div>
+
+  <SectionCTA />
 </section>
 
 <style>
@@ -84,8 +87,8 @@
   .approach-fit {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
-    padding-left: clamp(1rem, 2vw, 2rem);
+    gap: 2rem;
+    padding: 0.5rem 0 0.5rem clamp(1rem, 2vw, 2rem);
     border-left: 1px solid var(--rule);
   }
   .fit-label {

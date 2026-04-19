@@ -1,6 +1,5 @@
 <script>
   import Eyebrow from '../components/Eyebrow.svelte'
-  import SectionCTA from '../components/SectionCTA.svelte'
 
   const problems = [
     {
@@ -41,8 +40,6 @@
       </li>
     {/each}
   </ol>
-
-  <SectionCTA />
 </section>
 
 <style>

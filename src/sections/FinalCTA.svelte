@@ -29,7 +29,7 @@
         moves look like. No slide decks.
       </p>
       <div class="final-cta">
-        <CTAButton href={calendarUrl}>Book an AI consultation</CTAButton>
+        <CTAButton href={calendarUrl}>Book a consultation</CTAButton>
         <span class="final-note">Small teams only. Real revenue, real problems.</span>
       </div>
     </div>

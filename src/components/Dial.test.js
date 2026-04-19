@@ -58,4 +58,11 @@ describe('Dial', () => {
     expect(svg.getAttribute('width')).toBe('240')
     expect(svg.getAttribute('height')).toBe('240')
   })
+
+  test('animated prop toggles CSS-driven loop and drops inline rotate transform', () => {
+    const { container } = render(Dial, { props: { animated: true } })
+    const indicator = container.querySelector('[data-test="dial-indicator"]')
+    expect(indicator.classList.contains('dial-indicator--animated')).toBe(true)
+    expect(indicator.getAttribute('transform')).toBeNull()
+  })
 })

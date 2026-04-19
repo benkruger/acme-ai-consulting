@@ -25,24 +25,28 @@
       <Eyebrow number="00">Agentic SDLC consulting</Eyebrow>
       <h1 class="headline">
         Meet your team<br />
-        <span class="headline-accent">where they are.</span><br />
+        where they are.<br />
         <em>Ratchet up the dial</em><br />
         to fully autonomous.
       </h1>
 
       <p class="lede">
-        One engineer, ten pull requests a day. A small team shipping the output of a large one. We
-        come in, map where you stand, and coach every engineer through the transition.
+        Agentic development: one engineer ships ten pull requests a day. A small team ships the
+        output of a much bigger one.
+      </p>
+      <p class="lede">
+        We come in, map where you stand, and coach every engineer through the transition — at a pace
+        your organization can absorb.
       </p>
 
       <div class="hero-cta">
-        <CTAButton href={calendarUrl}>Book an AI consultation</CTAButton>
+        <CTAButton href={calendarUrl}>Book a consultation</CTAButton>
         <span class="hero-cta-note">30 minutes. No slide decks.</span>
       </div>
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <Dial position={0} size={dialSize} />
+      <Dial position={0} size={dialSize} animated />
     </div>
   </div>
 
@@ -67,7 +71,7 @@
   }
   .headline {
     margin-top: 1.2rem;
-    font-weight: 400;
+    font-weight: 550;
     font-size: clamp(2.5rem, 6.5vw, 5.25rem);
     line-height: 0.98;
     letter-spacing: -0.02em;
@@ -78,17 +82,16 @@
       'SOFT' 100,
       'opsz' 144;
     color: var(--forge);
-    font-weight: 400;
-  }
-  .headline-accent {
-    color: var(--iron);
-    font-weight: 400;
+    font-weight: 500;
   }
   .lede {
     margin-top: 1.25rem;
     font-size: 1.02rem;
     color: var(--ink-soft);
     max-width: 46ch;
+  }
+  .lede + .lede {
+    margin-top: 0.85rem;
   }
   .hero-cta {
     margin-top: 1.75rem;

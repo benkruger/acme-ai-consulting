@@ -65,7 +65,6 @@
   <div class="flow-phases" aria-label="Flow's six phases">
     {#each phases as phase (phase.number)}
       <article class="phase">
-        <span class="phase-number" aria-hidden="true">{phase.number}</span>
         <h3 class="phase-title">
           {phase.title}
           <span class="phase-subtitle">— {phase.subtitle}</span>
@@ -138,15 +137,8 @@
     padding-top: 1.25rem;
     border-top: 1px solid var(--ink);
   }
-  .phase-number {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    color: var(--forge);
-  }
   .phase-title {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     font-size: clamp(1.15rem, 1.4vw, 1.4rem);
     font-weight: 500;
     letter-spacing: -0.01em;

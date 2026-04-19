@@ -17,4 +17,10 @@ describe('Approach', () => {
     expect(container.textContent).toContain('twenty engineers')
     expect(container.textContent).toContain('one consultant')
   })
+
+  test('labels itself as "The solution" and includes the post-section CTA', () => {
+    const { container } = render(Approach)
+    expect(container.textContent).toContain('The solution')
+    expect(container.querySelector('[data-test="section-cta"]')).not.toBeNull()
+  })
 })

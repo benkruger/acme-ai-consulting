@@ -3,7 +3,7 @@
 
   let {
     calendarUrl = 'https://cal.com/benkruger/ai-consultation',
-    label = 'Book an AI consultation',
+    label = 'Book a consultation',
     note = '30 minutes. No slide decks.'
   } = $props()
 </script>
