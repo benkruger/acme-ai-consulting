@@ -24,13 +24,13 @@
       number: '04',
       title: 'Code Review',
       subtitle: 'Adversarial, multi-lens',
-      body: 'Five or six ways of reviewing the same diff — security, performance, design patterns, maintainability. Issues caught before merge.'
+      body: 'Four isolated agents hit the same diff in parallel — reviewer, pre-mortem ("this shipped and broke prod"), adversarial tester that writes failing tests to prove coverage gaps, and documentation auditor. Findings map to six dimensions: architecture, simplicity, maintainability, correctness, coverage, docs.'
     },
     {
       number: '05',
       title: 'Learn',
       subtitle: 'Continuous improvement',
-      body: 'Every flow feeds the system. The more teams running Flow, the faster it gets smarter — and the faster the dial can safely climb.'
+      body: 'A cognitively isolated agent audits rule compliance and process gaps. Gaps become issues against the plugin. The plugin hardens. Every team benefits. The more flows that flow, the smarter it gets.'
     },
     {
       number: '06',
